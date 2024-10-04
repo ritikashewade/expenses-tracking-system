@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spring boot</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <h1 class="mt-5">
+		[[${message}]]			<!--to display data from backend in frontend we can write the key inside [[${key}]]-->
+	</h1>
+	<table border="1">
+	        <thead>
+	            <tr>
+					<th>ID</th>
+	                <th>Name</th>
+	                <th>createdAt</th>
+					<th>updatedAt</th>
+	            </tr>
+	        </thead>
+	        <tbody> 
+	            
+	            <tr th:each="c : ${category}">
+					<td th:text="${c.id}"></td>
+	                <td th:text="${c.name}"></td>
+	                <td th:text="${c.createdAt}"></td>
+					<td th:text="${c.updatedAt}"></td>
+	            </tr>
+	        </tbody>
+	    </table>
+</body>
+</html>
